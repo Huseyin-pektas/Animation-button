@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+
+    min-height: 100vh;
+    display: flex;
+    background: #0e1538;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    --clr: #ff22bb;
+    
+}
+
+ a{
+    position: relative;
+    padding: 20px 60px;
+    overflow: hidden;
+    display: flex;
+    transition: 1s;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 40px;
+    background: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparet, #0004 );
+     
+}
+a:hover{
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr), 
+    0 0 60px var(--clr),
+    0 0 100px var(--clr);
+
+}
+a::before{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--clr);
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(-0.33s*var(--1));
+}
+a:hover::before{
+    width: 120%;
+}
+a::after{
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    transition: 0.5s;
+}
+a:hover::after{
+    background: var(--clr);
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+span{
+    z-index: 1;
+    position: relative;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 4px;
+}
+a:hover span{
+    opacity: 1;
+}
